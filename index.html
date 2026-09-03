@@ -78,6 +78,13 @@
     font-size:16px;
     margin-bottom:32px;
   }
+  .video-fallback{
+    color:var(--text-lo);
+    font-size:13px;
+    margin-top:14px;
+    text-align:center;
+  }
+  .video-fallback a{color:var(--gold);}
   .video-box{
     position:relative;
     width:100%;
@@ -88,26 +95,8 @@
     overflow:hidden;
     box-shadow:0 30px 60px -30px rgba(0,0,0,.8);
   }
-  .video-box video{
-    width:100%;height:100%;object-fit:cover;display:block;
-  }
-  .video-box .placeholder-art{
-    position:absolute;inset:0;
-    display:flex;align-items:center;justify-content:center;
-    flex-direction:column;gap:18px;
-  }
-  .play-btn{
-    width:78px;height:78px;border-radius:50%;
-    background:var(--gold);
-    display:flex;align-items:center;justify-content:center;
-    cursor:pointer;
-    box-shadow:0 0 0 0 rgba(231,168,58,.5);
-    transition:transform .2s ease;
-  }
-  .play-btn:hover{transform:scale(1.06);}
-  .play-btn svg{margin-left:4px;}
-  .placeholder-label{
-    color:var(--text-lo);font-size:13px;letter-spacing:.05em;
+  .video-box iframe{
+    width:100%;height:100%;display:block;border:0;
   }
 
   /* ---------- Main two column ---------- */
@@ -271,13 +260,13 @@
  
     <div class="video-box">
       <iframe
-        src="https://www.youtube.com/embed/040PpQFOzb4"
+        src="https://www.youtube.com/watch?v=wXMhWX118Pg"
         title="Vidéo de présentation Hive Strength"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
       </iframe>
     </div>
-    <p class="video-fallback">La vidéo ne se lance pas ? <a href="https://www.youtube.com/watch?v=040PpQFOzb4" target="_blank" rel="noopener">Regarde-la directement sur YouTube ↗</a></p>
+    <p class="video-fallback">La vidéo ne se lance pas ? <a href="https://www.youtube.com/watch?v=wXMhWX118Pg" target="_blank" rel="noopener">Regarde-la directement sur YouTube ↗</a></p>
   </div>
 </section>
 
