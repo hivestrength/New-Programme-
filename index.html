@@ -312,18 +312,24 @@
       <form id="subscribeForm" class="form-card" novalidate>
         <div class="field">
           <label for="name">Nom Prénom *</label>
-          <input type="text" id="name" required>
+          <input id="name" name="name" type="text" required>
         </div>
         <div class="field">
           <label for="email">E-mail *</label>
-          <input type="email" id="email" required>
+          <input id="email" name="email" type="email" required>
         </div>
-        <label class="consent">
-          <input type="checkbox" required>
-          <span>J'accepte la <a href="#">politique de confidentialité</a></span>
+        <label class="rgpd">
+          <input type="checkbox" id="rgpdConsent" required>
+          <span>
+            J’accepte la 
+            <a href="politique-confidentialite.html" target="_blank">
+              politique de confidentialité
+            </a>
+          </span>
         </label>
-        <button class="cta" type="submit">Accéder au programme GRATUIT</button>
-        <p class="form-note">Après validation tu seras redirigé vers le Google Sheet du programme.<br>Pense à <strong style="color:var(--text-hi)">Fichier → Créer une copie</strong> pour l'utiliser.<br><br>En renseignant ton email, tu acceptes d'être recontacté par Hive Strength.</p>
+        <button id="submitBtn" type="submit">Accéder au programme GRATUIT</button>
+        <p id="form-msg" class="form-msg" role="status" aria-live="polite"></p>
+        <p class="note">Après validation tu seras redirigé vers le Google Sheet du programme.<br>Pense à <strong style="color:var(--text-hi)">Fichier → Créer une copie</strong> pour l'utiliser.<br><br>En renseignant ton email, tu acceptes d'être recontacté par Hive Strength.</p>
       </form>
     </div>
 
