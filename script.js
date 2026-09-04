@@ -12,7 +12,7 @@ document.getElementById('subscribeForm').addEventListener('submit', async functi
     rgpd.focus();
     return;
   }
-  
+
   const scriptURL = 'https://script.google.com/macros/s/AKfycbyXATQQwmfBDQ0wqjIFfJHNhwf9JtHXLu6cdKJOKmaQmxUGh7lVBKDuzwu34sKNLtNb0w/exec';
 
   // validation
@@ -38,25 +38,4 @@ document.getElementById('subscribeForm').addEventListener('submit', async functi
     msg.textContent = 'Erreur réseau.';
     msg.style.color = '#ffb3b3';
   }
-});
-
-// collapsible blocks and FAQ
-document.querySelectorAll('.collapse-toggle').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    const panel = btn.nextElementSibling;
-    const isOpen = panel.style.display==='block';
-    panel.style.display = isOpen ? 'none' : 'block';
-    btn.textContent = (isOpen ? '+ ' : '− ') + btn.textContent.slice(2);
-  });
-});
-
-document.querySelectorAll('.faq-q').forEach(q=>{
-  q.addEventListener('click', ()=>{
-    const open = q.getAttribute('aria-expanded') === 'true';
-    // close others
-    document.querySelectorAll('.faq-q').forEach(x=>{ x.setAttribute('aria-expanded','false'); if(x.nextElementSibling) x.nextElementSibling.style.display='none'; });
-    q.setAttribute('aria-expanded', !open);
-    const a = q.nextElementSibling;
-    if(a) a.style.display = open ? 'none' : 'block';
-  });
 });
