@@ -43,7 +43,7 @@
   }
   header.site .wrap{display:flex;align-items:center;gap:14px;padding:0;width:100%;}
   .logo{
-    height:100px;max-height:18vh;width:auto;flex:none;display:block;
+    height:82px;max-height:18vh;width:auto;flex:none;display:block;
   }
   .brand-name{font-size:15px;letter-spacing:.14em;font-weight:700;}
   .brand-name span{display:block;font-size:10px;letter-spacing:.2em;color:var(--text-lo);font-weight:500;}
@@ -184,6 +184,9 @@
     letter-spacing:.01em;
   }
   .cta:hover{background:var(--gold-dim);}
+  .form-msg{
+    font-size:13px;font-weight:600;text-align:center;margin-top:14px;min-height:1em;
+  }
   .form-note{
     font-size:12px;color:var(--text-lo);margin-top:16px;text-align:center;line-height:1.6;
   }
@@ -290,7 +293,7 @@
     <div class="card form-card">
       <div class="kicker">Étape suivante</div>
       <h3>Reçois ton programme</h3>
-      <form onsubmit="event.preventDefault(); alert('Formulaire de démonstration — branche ton service d\'envoi ici.');">
+      <form id="subscribeForm">
         <div class="field">
           <label for="name">Nom Prénom *</label>
           <input type="text" id="name" required>
@@ -300,10 +303,11 @@
           <input type="email" id="email" required>
         </div>
         <label class="consent">
-          <input type="checkbox" required>
+          <input type="checkbox" id="rgpdConsent" required>
           <span>J'accepte la <a href="#">politique de confidentialité</a></span>
         </label>
         <button class="cta" type="submit">Accéder au programme GRATUIT</button>
+        <p id="form-msg" class="form-msg"></p>
         <p class="form-note">Après validation tu seras redirigé vers le Google Sheet du programme.<br>Pense à <strong style="color:var(--text-hi)">Fichier → Créer une copie</strong> pour l'utiliser.<br><br>En renseignant ton email, tu acceptes d'être recontacté par Hive Strength.</p>
       </form>
     </div>
@@ -349,6 +353,7 @@
   <div class="legal"><a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a></div>
 </footer>
 
+<script src="script.js"></script>
 <script>
   document.querySelectorAll('.faq-item').forEach(item=>{
     item.addEventListener('toggle', ()=>{
