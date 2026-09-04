@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hive Strength | Programme gratuit 8 semaines</title>
+<style>
+  :root{
+    --bg-void:#0b0b0c;
+    --bg-black:#000000;
+    --bg-panel:#161616;
+    --bg-panel-2:#1e1e1e;
+    --stroke:#2b2b2b;
+    --gold:#e7a83a;
+    --gold-dim:#c98f2c;
+    --text-hi:#f5f5f3;
+    --text-lo:#a3a09a;
+    --link:#6fa8dc;
+    --radius:2px;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg-black);
+    color:var(--text-hi);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand-word{
+    font-family:'Poppins',Inter,sans-serif;
+  }
+  a{color:var(--link);}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Header ---------- */
+  header.site{
+    display:flex;align-items:center;gap:14px;
+    padding:22px 24px;
+    background:var(--bg-void);
+    border-bottom:1px solid var(--stroke);
+  }
+  header.site .wrap{display:flex;align-items:center;gap:14px;padding:0;width:100%;}
+  .logo{
+    height:82px;max-height:18vh;width:auto;flex:none;display:block;
+  }
+  .brand-name{font-size:15px;letter-spacing:.14em;font-weight:700;}
+  .brand-name span{display:block;font-size:10px;letter-spacing:.2em;color:var(--text-lo);font-weight:500;}
+
+  /* ---------- Hero video ---------- */
+  .hero{
+    position:relative;
+    background:var(--bg-black);
+    border-bottom:1px solid var(--stroke);
+  }
+  .hero-video-frame{
+    max-width:1180px;margin:0 auto;
+    padding:56px 24px 40px;
+  }
+  .hero-kicker,
+  .kicker{
+    color:var(--gold);
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:10px;
+  }
+  .hero h1{
+    font-size:clamp(28px,4.2vw,46px);
+    line-height:1.15;
+    margin:0 0 14px;
+    max-width:780px;
+    font-weight:700;
+  }
+  .hero-sub{
+    color:var(--text-lo);
+    max-width:620px;
+    font-size:16px;
+    margin-bottom:32px;
+  }
+  .video-box{
+    position:relative;
+    display:block;
+    width:100%;
+    aspect-ratio:16/9;
+    background:var(--bg-black);
+    border:1px solid var(--stroke);
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.8);
+  }
+  .video-box iframe{
+    width:100%;height:100%;display:block;border:0;
+  }
+
+  /* ---------- Main two column ---------- */
+  main{padding:56px 0 0;}
+  .grid{
+    display:grid;
+    grid-template-columns:1.55fr 1fr;
+    gap:28px;
+    align-items:center;
+  }
+  .card{
+    background:var(--bg-black);
+    border:1px solid var(--stroke);
+    border-radius:6px;
+    padding:32px;
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.8);
+  }
+  .card.details-card,
+  .faq-section .card{
+    background:var(--bg-void);
+  }
+  .details h2{
+    color:var(--text-hi);
+    font-size:clamp(22px,2.6vw,30px);
+    line-height:1.25;
+    margin:0 0 16px;
+    font-weight:700;
+    max-width:520px;
+  }
+  .details p{color:var(--text-hi);font-size:15px;}
+  .details p.muted{color:var(--text-lo);}
+  .details strong{color:var(--text-hi);}
+
+  .blocs{margin-top:22px;}
+  .blocs .faq-item:first-child{border-top:1px solid var(--stroke);}
+
+  .end-title{
+    margin-top:30px;font-size:19px;color:var(--text-hi);font-weight:700;
+  }
+  .end-copy{color:var(--link);font-size:14.5px;}
+
+  /* ---------- Form card ---------- */
+  .form-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    border:none;
+  }
+  .form-card form{
+    width:100%;
+    max-width:300px;
+    text-align:left;
+  }
+  .form-card h3{
+    text-align:center;
+    color:var(--text-hi);
+    font-size:clamp(19px,2vw,22px);
+    margin:0 0 22px;
+    font-weight:700;
+  }
+  label{
+    display:block;font-size:13px;color:var(--text-lo);margin-bottom:6px;
+  }
+  .field{margin-bottom:16px;}
+  input[type=text],input[type=email]{
+    width:100%;
+    background:#0f0f0f;
+    border:1px solid var(--stroke);
+    color:var(--text-hi);
+    padding:11px 12px;
+    border-radius:4px;
+    font-size:14px;
+    font-family:inherit;
+  }
+  input:focus{outline:2px solid var(--gold);outline-offset:1px;}
+  .consent{
+    display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--text-lo);margin:14px 0 18px;
+  }
+  .consent input{margin-top:3px;}
+  .cta{
+    width:100%;
+    background:var(--gold);
+    color:#141200;
+    border:none;
+    padding:13px 16px;
+    font-weight:700;
+    font-size:14.5px;
+    border-radius:4px;
+    cursor:pointer;
+    letter-spacing:.01em;
+  }
+  .cta:hover{background:var(--gold-dim);}
+  .form-msg{
+    font-size:13px;font-weight:600;text-align:center;margin-top:14px;min-height:1em;
+  }
+  .form-note{
+    font-size:12px;color:var(--text-lo);margin-top:16px;text-align:center;line-height:1.6;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-section{margin:56px 0 0;}
+  .faq-section .card{padding:34px;}
+  .faq-section h2{color:var(--text-hi);font-size:clamp(22px,2.6vw,28px);margin:0 0 20px;font-weight:700;}
+  details.faq-item{
+    border-top:1px solid var(--stroke);
+    padding:16px 0;
+  }
+  details.faq-item summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;justify-content:space-between;align-items:center;
+    font-weight:600;font-size:15px;
+  }
+  details.faq-item summary::-webkit-details-marker{display:none;}
+  details.faq-item summary .marker{color:var(--gold);font-size:18px;font-weight:700;flex:none;margin-left:12px;}
+  details.faq-item[open] summary .marker{content:"–";}
+  details.faq-item p{color:var(--text-lo);margin:12px 0 0;font-size:14.5px;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    margin-top:64px;
+    background:var(--bg-void);
+    border-top:1px solid var(--stroke);
+    padding:34px 0 44px;
+    text-align:center;
+    color:var(--text-lo);
+    font-size:13px;
+  }
+  footer .social{margin-bottom:10px;}
+  footer .social a{color:var(--gold);text-decoration:none;margin:0 10px;font-weight:600;}
+  footer .legal a{color:var(--gold);text-decoration:none;}
+
+  /* ---------- Mobile: video, form, details ---------- */
+  @media (max-width:860px){
+    .grid{
+      display:flex;
+      flex-direction:column;
+    }
+    .form-card{order:1;}
+    .details-card{order:2;}
+    .hero-video-frame{padding:32px 18px 26px;}
+    main{padding:34px 0 0;}
+    .card{padding:22px;}
+    .faq-section .card{padding:22px;}
+    .form-card form{max-width:none;width:100%;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="LOGO EPAULE.png" alt="Hive Strength" class="logo">
+    <div class="brand-name">HIVE STRENGTH<span>PROGRAMME DE FORCE</span></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-video-frame">
+    <div class="hero-kicker">Programme gratuit | 8 semaines</div>
+    <h1>Pose tes bases sur le Squat, le Bench et le Deadlift</h1>
+    <p class="hero-sub">Regarde la présentation de 2 minutes pour comprendre comment fonctionne le programme, puis récupère-le juste en dessous.</p>
+
+    <div class="video-box">
+      <iframe
+        src="https://www.youtube.com/embed/wXMhWX118Pg"
+        title="Présentation du programme gratuit Hive Strength"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="grid">
+
+    <div class="card details-card details">
+      <div class="kicker">Le programme</div>
+      <h2>Programme Hive Strength | 8 semaines</h2>
+      <p>Un programme structuré et 100&nbsp;% gratuit pour progresser sur le <strong>Squat</strong>, le <strong>Bench</strong> et le <strong>Deadlift</strong>.</p>
+      <p class="muted">Accessible à <strong style="color:var(--text-hi)">tout le monde</strong>, avec une progression logique sur deux blocs de 4 semaines.</p>
+
+      <div class="blocs">
+        <details class="faq-item" open>
+          <summary>Bloc 1 - Les fondations<span class="marker">–</span></summary>
+          <p>L’objectif ici, c’est de <strong>créer une vraie dynamique</strong>. On cherche à construire une <strong>capacité de travail</strong>, à emmagasiner du volume et de la régularité pour avoir plus de marge de progression par la suite. Ce bloc te prépare à encaisser, à t’adapter et à être prêt à monter en intensité dans le suivant.</p>
+            <p><strong>Volume hebdomadaire :</strong></p>
+            <ul>
+              <li>Squat : 10 séries</li>
+              <li>Bench : 17 séries</li>
+              <li>Deadlift : 8 séries</li>
+            </ul>
+        </details>
+        <details class="faq-item">
+          <summary>Bloc 2 - L'intensification<span class="marker">+</span></summary>
+          <p>Dans ce bloc, on garde la même base, mais on réduit un peu le volume pour <strong>monter en intensité</strong>. L’idée, c’est de transformer tout le travail du premier bloc en performances concrètes. Tu pousses plus lourd, plus fort, tout en restant propre techniquement, pour arriver prêt à tester tes max à la fin du programme.</p>
+            <p><strong>Volume hebdomadaire :</strong></p>
+            <ul>
+              <li>Squat : 11 séries</li>
+              <li>Bench : 18 séries</li>
+              <li>Deadlift : 9 séries</li>
+            </ul>
+        </details>
+      </div>
+
+      <div class="end-title">À la fin des 8 semaines</div>
+      <p class="end-copy">Tu auras construit des bases solides, gagné en force et compris comment t'entraîner efficacement. Et si un suivi plus complet t'intéresse, n'hésite pas à nous contacter directement par message.</p>
+    </div>
+
+    <div class="card form-card">
+      <div class="kicker">Étape suivante</div>
+      <h3>Reçois ton programme</h3>
+      <form id="subscribeForm">
+        <div class="field">
+          <label for="name">Nom Prénom *</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="field">
+          <label for="email">E-mail *</label>
+          <input type="email" id="email" required>
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="rgpdConsent" required>
+          <span>J'accepte la <a href="politique-confidentialite.html">politique de confidentialité</a></span>
+        </label>
+        <button class="cta" type="submit">Accéder au programme GRATUIT</button>
+        <p id="form-msg" class="form-msg"></p>
+        <p class="form-note">Après validation tu seras redirigé vers le Google Sheet du programme.<br>Pense à <strong style="color:var(--text-hi)">Fichier → Créer une copie</strong> pour l'utiliser.<br><br>En renseignant ton email, tu acceptes d'être recontacté par Hive Strength.</p>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="faq-section">
+    <div class="card">
+      <div class="kicker">Questions fréquentes</div>
+      <h2>FAQ</h2>
+
+      <details class="faq-item" open>
+        <summary>Est-ce que c'est adapté aux débutants ?<span class="marker">–</span></summary>
+        <p>Oui, le programme s’adapte à ton niveau et t’aide à progresser à ton rythme.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Combien de séances par semaine ?<span class="marker">+</span></summary>
+        <p>4 séances, simples et structurées, que tu peux placer librement dans ta semaine.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>C'est vraiment gratuit ?<span class="marker">+</span></summary>
+        <p>Oui, totalement gratuit. Aucun paiement, aucun engagement.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Et après les 8 semaines ?<span class="marker">+</span></summary>
+        <p>Tu auras tout pour continuer à progresser par toi-même, ou passer sur un suivi Hive Strength si tu veux aller plus loin.</p>
+      </details>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="social">
+    <a href="https://www.instagram.com/hive.strength/">Instagram</a>
+    <a href="https://www.youtube.com/@HIVESTRENGTH">YouTube</a>
+    <a href="mailto:hiveestrength@gmail.com">hiveestrength@gmail.com</a>
+  </div>
+  <div>© 2026 Hive Strength - Tous droits réservés</div>
+  <div class="legal"><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Politique de confidentialité</a></div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.addEventListener('toggle', ()=>{
+      const marker = item.querySelector('.marker');
+      marker.textContent = item.open ? '–' : '+';
+    });
+  });
+</script>
+
+</body>
+</html>
